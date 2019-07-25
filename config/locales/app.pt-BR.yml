@@ -1,0 +1,6 @@
+'pt-BR':
+  app:
+    name: "eCommerce"
+    site_subtitle: "Site - eCommerce"
+    backoffice_subtitle: "Backoffice - eCommerce"
+    profile_subtitle: "Perfil - eCommerce"
