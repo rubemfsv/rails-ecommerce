@@ -33,6 +33,12 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 # Authorization
 gem 'pundit'
+# A library for generating fake data such as names, addresses, and phone numbers.
+gem 'faker'
+# Markdown Lorem Ipsum generator
+gem 'doctor_ipsum'
+# O Lero-lero Generator é uma ferramenta capaz de gerar frases que 'falam' muita coisa mas que não tem conteúdo algum.
+gem 'lerolero_generator'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
