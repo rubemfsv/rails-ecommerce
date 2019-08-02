@@ -49,7 +49,7 @@ namespace :utils do
 
     100.times do
         Ad.create!(
-          title: Faker::Name.name,
+          title: Faker::Beer.name,
           description: LeroleroGenerator.paragraph(Random.rand(3)),
           member: Member.all.sample,
           category: Category.all.sample
