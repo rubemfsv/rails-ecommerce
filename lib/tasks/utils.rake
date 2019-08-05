@@ -1,13 +1,26 @@
 namespace :utils do
 
+  desc "Setup Development"
+  task setup_dev: :environment do
+    puts "Executando o setup para desenvolviment..."
+
+    puts "APAGANDO BD... #{%x(rails db:drop)}"
+    puts "Criando BD... #{%x(rails db:create)}"
+    puts %x(rails db:migrate)
+    puts %x(rails db:seed)
+    puts %x(rails utils:adm)
+    puts %x(rails utils:members)
+    puts %x(rails utils:categories)
+    puts %x(rails utils:ads)
+
+    puts "... Setup completado com sucesso!"
+  end
+
+###################################################################################
+
   desc "Cria Adms Fakes"
   task adm: :environment do
-    puts "Cadastrando Administrador Geral..."
-
-    Admin.create!(name: "Administrador Geral", email: "admin@admin.com", password: "123456",
-        password_confirmation: "123456", role: 0)
-    Admin.create!(name: "Administrador 2", email: "admin2@admin.com", password: "123456",
-        password_confirmation: "123456", role: 1)
+    puts "Cadastrando Administradores fakes..."
 
     10.times do
       Admin.create!(
@@ -53,7 +66,8 @@ namespace :utils do
           description: LeroleroGenerator.paragraph(Random.rand(3)),
           member: Member.all.sample,
           category: Category.all.sample,
-          price: "#{Random.rand(500)},#{Random.rand(99)}"
+          price: "#{Random.rand(500)},#{Random.rand(99)}",
+          picture: File.new(Rails.root.join('public', 'images-for-ads', "#{Random.rand(9)}.jpg"), 'r')
           )
     end
 

@@ -1,25 +1,20 @@
-# README
+# Ruby on Rails - Curso Completo - Módulo 3
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Aqui ficará o código fonte do aplicativo "eCommerce APP" desenvolvido no módulo 3 do curso de Ruby on Rails Completo da Udemy.
 
-Things you may want to cover:
 
-* Ruby version
+## Dependências do projeto
 
-* System dependencies
+* ImageMagick (https://www.imagemagick.org)
 
-* Configuration
+```
+sudo apt-get update
+sudo apt-get install imagemagick libmagickwand-dev
+```
 
-* Database creation
+* Graphviz (https://www.graphviz.org) - Apenas para Ambiente de Desenvolvimento
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# rails-ecommerce
+```
+sudo apt-get update
+sudo apt-get install graphviz
+```

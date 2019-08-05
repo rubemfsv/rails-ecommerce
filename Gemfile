@@ -41,6 +41,9 @@ gem 'doctor_ipsum'
 gem 'lerolero_generator'
 # Integration of RubyMoney - Money with Rails
 gem 'money-rails'
+# Easy file attachment management for ActiveRecord
+gem 'paperclip', '~> 5.0.0'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
