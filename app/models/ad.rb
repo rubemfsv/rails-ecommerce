@@ -6,7 +6,8 @@ class Ad < ApplicationRecord
   has_attached_file :picture, styles: { medium: "320x150#", thumb: "100x100#" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
-  scope :last_six, -> { limit(6).order(created_at: :desc) }
+  scope :desc_order, ->(quantity = 10) { limit(quantity).order(created_at: :desc) }
+  scope :for_member, -> (member) { where(member: member) }
 
   # gem money-rails
   monetize :price_cents

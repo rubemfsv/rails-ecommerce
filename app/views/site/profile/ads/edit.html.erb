@@ -1,0 +1,42 @@
+<h1>Editando Anúncio</h1>
+
+<%= form_for([:site, :profile, @ad]) do |f| %>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="for-goup">
+        <%= f.label :title %>
+        <%= f.text_field :title, class:"form-control", placeholder: "Título" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="for-goup">
+        <%= f.label :price %>
+        <%= f.text_field :price, class:"form-control", placeholder: "Título" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="for-goup">
+        <%= f.label :description %>
+        <%= f.text_area :description, class:"form-control", rows: 10%>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="for-goup">
+        <%= f.label :picture %>
+        <%= image_tag @ad.picture(:medium), class:"img-thumbnail" %>
+        <%= f.file_field :picture %>
+      </div>
+    </div>
+  </div>
+
+  <%= submit_tag "Atualizar", class: "btn btn-default" %>
+<% end -%>
