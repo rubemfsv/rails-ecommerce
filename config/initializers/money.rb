@@ -6,10 +6,7 @@ MoneyRails.configure do |config|
   #
   #config.default_currency = :brl
 
-  I18n.locale = :'pt-BR'
-
   Money.locale_backend = :i18n
-
 
   # Set default bank object
   #
