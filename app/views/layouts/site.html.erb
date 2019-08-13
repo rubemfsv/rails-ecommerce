@@ -15,8 +15,6 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_link_tag    'site', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'site', 'data-turbolinks-track': 'reload' %>
 
 </head>
 
@@ -24,6 +22,9 @@
   <%= render partial: "layouts/site_shared/navigation" %>
   <%= yield %>
   <%= render partial: "layouts/site_shared/footer" %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'site', 'data-turbolinks-track': 'reload' %>
+
 </body>
 
 </html>

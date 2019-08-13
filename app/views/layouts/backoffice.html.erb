@@ -16,8 +16,6 @@
 
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= stylesheet_link_tag    'backoffice', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= javascript_include_tag 'backoffice' %>
 
 </head>
 
@@ -50,6 +48,9 @@
         $.notify("<%= alert %>", "error");
       </script>
     <% end -%>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'backoffice' %>
+
 </body>
 
 </html>

@@ -23,6 +23,9 @@
 
 <body>
   <%= yield %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'backoffice', 'data-turbolinks-track': 'reload' %>
+
 </body>
 
 </html>
