@@ -59,6 +59,10 @@ gem 'jquery-ui-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+# Bootstrap Growl to notifyjs
+gem 'rails-assets-bootstrap.growl'
+# Animate CSS
+gem 'rails-assets-animate-css'
 
 source 'https://rails-assets.org' do
 # Bootbox notifications

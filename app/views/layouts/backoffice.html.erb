@@ -39,18 +39,10 @@
     </div>
     <!-- /#page-wrapper -->
   </div>
-
-    <% if notice %>
-      <%= javascript_tag "$.notify('#{notice}', 'success');"  %>
-    <% end -%>
-    <% if alert %>
-      <script>
-        $.notify("<%= alert %>", "error");
-      </script>
-    <% end -%>
   <%= javascript_include_tag 'application' %>
   <%= javascript_include_tag 'backoffice' %>
 
+  <%= render partial: 'layouts/shared/notifications' %>
 </body>
 
 </html>
