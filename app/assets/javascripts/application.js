@@ -15,3 +15,10 @@
 //= require activestorage
 //= require bootstrap.growl
 
+// Spin
+$(document).on('ajax:beforeSend', function(){
+ $('#global-spin').fadeIn('slow');
+});
+$(document).on('ajax:send', function(){
+ $('#global-spin').fadeOut('slow');
+});
