@@ -7,7 +7,7 @@
         <p class="lead">Categorias</p>
         <div class="list-group">
             <% @categories.each do |category| %>
-                <a href="#" class="list-group-item"> <%= category.description %></a>
+                <a href="#" class="list-group-item"> <%= "#{category.description} (#{category.ads_count})" %></a>
             <% end %>
         </div>
     </div>
@@ -55,7 +55,8 @@
                           <h4>
                             <%= link_to ad.title.truncate(20), site_ad_detail_path(ad), remote: true %>
                           </h4>
-                          <p><%= ad.description.truncate(100) %></p>
+                          <p><%= ad.description_short.truncate(100) %></p>
+                          <!-- <p><%# ad.description.truncate(100) %></p> -->
                       </div>
                       <div class="ratings">
                           <p class="pull-right">15 reviews</p>

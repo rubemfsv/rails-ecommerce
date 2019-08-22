@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_08_134156) do
+ActiveRecord::Schema.define(version: 2019_08_22_190159) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 2019_08_08_134156) do
     t.integer "picture_file_size"
     t.datetime "picture_updated_at"
     t.date "finish_date"
+    t.text "description_md"
+    t.text "description_short"
     t.index ["category_id"], name: "index_ads_on_category_id"
     t.index ["member_id"], name: "index_ads_on_member_id"
   end
@@ -47,6 +49,7 @@ ActiveRecord::Schema.define(version: 2019_08_08_134156) do
     t.string "description", limit: 60
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "ads_count", default: 0
   end
 
   create_table "members", force: :cascade do |t|

@@ -58,7 +58,6 @@ namespace :dev do
   end
 
 ###################################################################################
-
   desc "Cria Anúncios Fakes"
   task ads: :environment do
     puts "Cadastrando Anúncios Fake"
@@ -66,12 +65,13 @@ namespace :dev do
     5.times do
       Ad.create!(
         title: Faker::Beer.name,
-        description: LeroleroGenerator.paragraph([1,2,3].sample),
+        description_md: %x(ruby -e "require 'doctor_ipsum'; puts DoctorIpsum::Markdown.entry"),
+        description_short: LeroleroGenerator.sentence([2,3].sample),
         member: Member.first,
         category: Category.all.sample,
         price: "#{Random.rand(500)},#{Random.rand(99)}",
         finish_date: Date.today + Random.rand(90),
-        picture: File.new(Rails.root.join('public', 'images-for-ads', "#{Random.rand(9)}.jpg"), 'r')
+        picture: File.new(Rails.root.join('public', 'templates', 'images-for-ads', "#{Random.rand(9)}.jpg"), 'r')
         )
     end
 
@@ -79,17 +79,19 @@ namespace :dev do
     100.times do
       Ad.create!(
         title: Faker::Beer.name,
-        description: LeroleroGenerator.paragraph([1,2,3].sample),
+        description_md: %x(ruby -e "require 'doctor_ipsum'; puts DoctorIpsum::Markdown.entry"),
+        description_short: LeroleroGenerator.sentence([2,3].sample),
         member: Member.all.sample,
         category: Category.all.sample,
         price: "#{Random.rand(500)},#{Random.rand(99)}",
         finish_date: Date.today + Random.rand(90),
-        picture: File.new(Rails.root.join('public', 'images-for-ads', "#{Random.rand(9)}.jpg"), 'r')
+        picture: File.new(Rails.root.join('public', 'templates', 'images-for-ads', "#{Random.rand(9)}.jpg"), 'r')
       )
     end
 
     puts "... Anúncios cadastrados com sucesso!"
   end
+
 
 ###################################################################################
 

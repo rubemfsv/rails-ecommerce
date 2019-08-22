@@ -11,6 +11,8 @@ gem 'sqlite3'
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# The safe Markdown parser, reloaded.
+gem 'redcarpet'
 # Help ActiveRecord::Enum to work fine with I18n
 gem 'enum_help'
 # Use Uglifier as compressor for JavaScript assets
@@ -45,7 +47,6 @@ gem 'money-rails'
 gem 'paperclip', '~> 5.0.0'
 # jQuery UI for the Rails asset pipeline
 gem 'jquery-ui-rails'
-
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -71,6 +72,10 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap', '3.3.7'
   # A simple, versatile notification library
   gem 'rails-assets-notifyjs'
+  # BootstrapMarkdownEditor for the Rails asset pipeline
+  gem 'rails-assets-bootstrap-markdown'
+  # Marked
+  gem 'rails-assets-marked'
 end
 
 group :development, :test do
