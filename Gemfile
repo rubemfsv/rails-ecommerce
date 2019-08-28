@@ -64,6 +64,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rails-assets-bootstrap.growl'
 # Animate CSS
 gem 'rails-assets-animate-css'
+# Friendly Id Gem
+gem 'friendly_id'
 
 source 'https://rails-assets.org' do
 # Bootbox notifications
