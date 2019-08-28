@@ -47,6 +47,7 @@ gem 'money-rails'
 gem 'paperclip', '~> 5.0.0'
 # jQuery UI for the Rails asset pipeline
 gem 'jquery-ui-rails'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
