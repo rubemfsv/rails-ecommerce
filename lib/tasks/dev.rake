@@ -15,6 +15,7 @@ namespace :dev do
     puts %x(rails dev:members)
     puts %x(rails dev:categories)
     puts %x(rails dev:ads)
+    puts %x(rails dev:comments)
 
     puts "... Setup completado com sucesso!"
   end
@@ -114,6 +115,25 @@ namespace :dev do
     end
 
     puts "... CATEGORIAS cadastradas com sucesso!"
+  end
+
+###################################################################################
+
+  desc "Cria Comentários Fake"
+  task comments: :environment do
+    puts "Cadastrando COMENTÁRIOS..."
+
+    Ad.all.each do |ad|
+      (Random.rand(3)).times do
+        Comment.create!(
+          body: LeroleroGenerator.sentence([2,3].sample),
+          member: Member.all.sample,
+          ad: ad
+          )
+      end
+    end
+
+    puts "COMENTÁRIOS cadastrados com sucesso!"
   end
 
 end
