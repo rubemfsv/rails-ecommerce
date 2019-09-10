@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action :store_current_location, :unless => :devise_controller?
 
   # Pundit
   include Pundit
@@ -26,5 +27,11 @@ class ApplicationController < ActionController::Base
   def user_not_authorized
     flash[:alert] = t(messages.not_authorized)
     redirect_to(request.referrer || root_path)
+  end
+
+  private
+
+  def store_current_location
+    store_location_for(:member, request.url)
   end
 end

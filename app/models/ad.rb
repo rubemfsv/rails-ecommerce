@@ -3,6 +3,9 @@ class Ad < ApplicationRecord
   # Constants
   QTT_PER_PAGE = 6
 
+  # Ratyrate Gem
+  ratyrate_rateable 'quality'
+
   # Callbacks
   before_save :md_to_html
 
@@ -26,7 +29,7 @@ class Ad < ApplicationRecord
     where("lower(title) LIKE ?", "%#{term.downcase}%").page(page).per(QTT_PER_PAGE)
   }
   scope :for_member, -> (member) { where(member: member) }
-  scope :for_category, -> (id) { where(category: id) }
+  scope :for_category, -> (id, page) { where(category: id).page(page).per(QTT_PER_PAGE) }
 
 
   # gem money-rails

@@ -47,6 +47,8 @@ gem 'money-rails'
 gem 'paperclip', '~> 5.0.0'
 # jQuery UI for the Rails asset pipeline
 gem 'jquery-ui-rails'
+# A Ruby Gem that wraps the functionality of jQuery Raty library
+gem 'ratyrate'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
