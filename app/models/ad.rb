@@ -30,11 +30,17 @@ class Ad < ApplicationRecord
   }
   scope :for_member, -> (member) { where(member: member) }
   scope :for_category, -> (id, page) { where(category: id).page(page).per(QTT_PER_PAGE) }
-
+  scope :random_carousel, -> (quantity) { limit(quantity).order("RANDOM()")}
 
   # gem money-rails
   monetize :price_cents
 
+  def second
+    self[1]
+  end
+  def third
+    self[2]
+  end
   private
 
     def md_to_html

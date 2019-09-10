@@ -4,7 +4,7 @@ namespace :dev do
   task setup: :environment do
     images_path = Rails.root.join('public', 'system')
 
-    puts "Executando o setup para desenvolviment..."
+    puts "Executando o setup para desenvolvimento..."
 
     puts "APAGANDO BD... #{%x(rails db:drop)}"
     puts "Apagando imagens de public/system #{%x(rm -rf #{images_path})}"
@@ -51,6 +51,10 @@ namespace :dev do
         password: "123456",
         password_confirmation: "123456"
       )
+      member.build_profile_member
+
+      member.profile_member.first_name = Faker::Name.first_name
+      member.profile_member.second_name = Faker::Name.last_name
 
       member.save!
     end
