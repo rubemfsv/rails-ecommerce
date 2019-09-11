@@ -49,6 +49,8 @@ gem 'paperclip', '~> 5.0.0'
 gem 'jquery-ui-rails'
 # A Ruby Gem that wraps the functionality of jQuery Raty library
 gem 'ratyrate'
+# A Ruby Gem for graphs
+gem 'chartkick'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
