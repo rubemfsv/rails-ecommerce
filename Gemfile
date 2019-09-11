@@ -44,13 +44,15 @@ gem 'lerolero_generator'
 # Integration of RubyMoney - Money with Rails
 gem 'money-rails'
 # Easy file attachment management for ActiveRecord
-gem 'paperclip', '~> 5.0.0'
+# gem 'paperclip', '~> 5.0.0'
+gem 'paperclip', '~> 5.2.0'
 # jQuery UI for the Rails asset pipeline
 gem 'jquery-ui-rails'
 # A Ruby Gem that wraps the functionality of jQuery Raty library
 gem 'ratyrate'
 # A Ruby Gem for graphs
 gem 'chartkick'
+gem "nokogiri", ">= 1.10.4"
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
