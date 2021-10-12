@@ -1,5 +1,4 @@
 GEM
-  remote: https://rubygems.org/
   remote: https://rails-assets.org/
   specs:
     actioncable (5.2.3)
@@ -163,7 +162,6 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
-    puma (3.12.4)
     pundit (2.0.1)
       activesupport (>= 3.0.0)
     rack (2.0.8)
@@ -266,6 +264,12 @@ GEM
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
 
+GEM
+  remote: https://rubygems.org/
+  specs:
+    puma (4.3.9)
+      nio4r (~> 2.0)
+
 PLATFORMS
   ruby
 
@@ -293,7 +297,7 @@ DEPENDENCIES
   money-rails
   nokogiri (>= 1.10.4)
   paperclip (~> 5.2.0)
-  puma (~> 3.12)
+  puma (~> 4.3)
   pundit
   rails (~> 5.2.3)
   rails-assets-animate-css
